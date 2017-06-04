@@ -1,0 +1,36 @@
+a :nth-child(n+3) {
+    visibility: hidden;
+}
+
+.active :nth-child(n+3) {
+    visibility: visible;
+    transition: all 1s;
+}
+
+img {
+    width: 50px;
+    margin : .5em;
+    display: block;
+}
+
+.sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 8%;
+    height: 100%;
+    z-index: 2;
+    transition: all 1s;
+}
+
+.opened {
+    transition: all 1s;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 50%;
+    background: linear-gradient(to right, rgba(240,249,255,.9) 0%,rgba(203,235,255,.9) 47%,rgba(161,219,255,.9) 100%);
+}
+
+.hide {
+    display: none;
+}

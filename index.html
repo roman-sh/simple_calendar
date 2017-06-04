@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cimple Calendar</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body onload="init()">
+    <div class="list-group"></div>
+
+    <div class="sidebar">
+
+        <img src="img/menu.png" onclick="openMenu(this)"><br>
+
+        <div class="menu hide">  
+
+            <div class="buttons">
+                <button onclick="prepareAndRun('addMeeting')" class="btn btn-primary btn-block">Add meeting</button>
+                <button onclick="prepareAndRun('findNext')" class="btn btn-primary btn-block">Find next meeting</button>
+                <button onclick="prepareAndRun('countFor')" class="btn btn-primary btn-block">getMeetingsCountFor(name)</button><br>
+            </div>
+
+            <div class="alert alert-info hide" id="find-next-info"></div>
+
+            <div class="form meetings-count-for hide">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="input-name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button onclick="getMeetingsCountFor()" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-info" id="count-info"></div>
+            </div>
+
+            <div class="form add-meeting hide">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="input-title" class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-title" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-start-date" class="col-sm-2 control-label">Start date</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="input-start-date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-start-time" class="col-sm-2 control-label">Start time</label>
+                        <div class="col-sm-10">
+                            <input type="time" class="form-control" id="input-start-time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-end-date" class="col-sm-2 control-label">End date</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="input-end-date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-end-time" class="col-sm-2 control-label">End time</label>
+                        <div class="col-sm-10">
+                            <input type="time" class="form-control" id="input-end-time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-partices" class="col-sm-2 control-label">Participants</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-partices" 
+                                                    placeholder="David,Goliath">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button onclick="addMeeting()" class="btn btn-default">Create new meeting</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <script src="lib/moment.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>
